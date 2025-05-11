@@ -2,7 +2,7 @@ import os
 from groq import Groq
 
 # Directly pass the API key (for testing only, NOT recommended for production)
-client = Groq(api_key="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")
+client = Groq(api_key="you can put your api key")
 
 def generate_prompt():
     try:
