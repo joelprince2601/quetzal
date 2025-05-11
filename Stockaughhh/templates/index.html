@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stock News</title>
+    <script>
+        function fetchNews() {
+            const stock = document.getElementById("stockInput").value;
+            fetch("/fetch_news", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ stock: stock })
+            }).then(response => response.json())
+              .then(data => alert(`Task ID: ${data.task_id} started!`));
+        }
+    </script>
+</head>
+<body>
+    <h1>Stock News Scraper</h1>
+    <input type="text" id="stockInput" placeholder="Enter stock symbol">
+    <button onclick="fetchNews()">Fetch News</button>
+</body>
+</html>
